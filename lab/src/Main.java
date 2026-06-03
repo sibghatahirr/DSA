@@ -1,26 +1,27 @@
 public class Main {
     public static void main(String[] args) {
-        System.out.println("program started");
 
-        task1 library = new task1();
+        task3 manager =
+                new task3();
 
-        library.addBook("Java Programming");
-        library.addBook("Data Structures");
-        library.addBook("Operating Systems");
-        library.addBook("Algorithms");
-        library.addBook("Java Programming"); // Duplicate
+        manager.addStudentToCourse("OOP", "Hamza");
+        manager.addStudentToCourse("OOP", "Ali");
+        manager.addStudentToCourse("OOP", "Zain");
 
-        library.displayAllBooks();
+        manager.addStudentToCourse("DSA", "Basit");
+        manager.addStudentToCourse("DSA", "Kiran");
 
-        System.out.println("\nAvailable: " +
-                library.isBookAvailable("Algorithms"));
+        manager.displayCourseRoster("OOP");
 
-        library.removeBook("Operating Systems");
+        System.out.println("\nAli enrolled in OOP? "
+                + manager.isStudentEnrolled(
+                "OOP", "Ali"));
+
+        manager.removeStudentFromCourse(
+                "OOP", "Ali");
 
         System.out.println();
-        library.displayAllBooks();
 
-        System.out.println();
-        library.displayBooksStartingWith('J');
+        manager.displayCourseRoster("OOP");
     }
 }
